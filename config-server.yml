@@ -1,0 +1,10 @@
+server:
+  port: 8888
+
+# encrypt:
+#   failOnError: true
+#   keystore:
+#     location: https://github.com/mustafaguven/config-data
+#     password: 1234
+#     secret: mykeypass
+#     alias: defaultkey

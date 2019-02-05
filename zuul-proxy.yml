@@ -1,0 +1,23 @@
+zuul:
+  prefix: /api
+  routes:
+    catalog:
+      path: /catalog/**
+      serviceId: catalog-service
+
+    payment:
+      path: /payment/**
+      serviceId: payment-service
+
+    product:
+      path: /product/**
+      serviceId: product-service
+
+ribbon:
+  eureka:
+    enabled: true
+
+authentication:
+  shouldAuthenticate: false
+  key: token
+  value: encrypted_value

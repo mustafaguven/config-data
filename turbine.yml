@@ -1,0 +1,6 @@
+server:
+  port: 9999
+
+turbine:
+  appConfig: catalog-service, payment-service
+  clusterNameExpression: new String('default')

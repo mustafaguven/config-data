@@ -1,0 +1,11 @@
+general:
+  eureka:
+    server:
+      hostname: eureka-server
+
+spring:
+  cloud:
+    config:
+      uri: http://config-server:8888
+  rabbitmq:
+    host: rabbitmq

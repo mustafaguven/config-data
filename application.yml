@@ -1,0 +1,70 @@
+
+eureka:
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 2
+    leaseExpirationDurationInSeconds: 6
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+  client:
+    healthcheck: enabled
+    register-with-eureka: true
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://${general.eureka.server.hostname}:${general.eureka.server.port}/eureka/
+
+# management:
+#   context-path: /admin
+#   security:
+#     enabled: false
+#   endpoints:
+#     web:
+#       exposure:
+#         include: bus-refresh hystrix.stream
+#   endpoint:
+#     health:
+#       show-details: always﻿
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+security:
+  basic:
+    enabled: false
+  user:
+    name: mg
+    password: 123456
+
+feign:
+  hystrix:
+    enabled: enabled
+
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  cloud:
+    bus:
+      enabled: true
+    config:
+      uri: http://${general.eureka.server.hostname}:8888
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: mg
+    password: 123456
+
+
+general:
+  eureka:
+    server:
+      hostname: localhost
+      port: 8761
+
+app:
+  id: ${random.uuid}

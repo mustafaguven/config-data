@@ -1,0 +1,19 @@
+server:
+  port: 8761
+
+eureka:
+  server:
+    enableSelfPreservation: false #Eureka servers will stop the eviction of all instances if the number of heartbeats renewals is below the expected threshold. The warning in your Eureka servers shows this situation happened
+    evictionIntervalTimerInMs: 5000
+    peerNodeConnectionIdleTimeoutSeconds: 5
+    renewalThresholdUpdateIntervalMs: 10000
+    peerEurekaStatusRefreshTimeIntervalMs: 10000
+    peerEurekaNodesUpdateIntervalMs: 10000
+    waitTimeInMsWhenSyncEmpty: 0
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
