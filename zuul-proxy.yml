@@ -1,6 +1,17 @@
 zuul:
   prefix: /api
   routes:
+    auth-center_login:
+      path: /login/**
+      serviceId: auth-center
+      sensitiveHeaders: Cookie,Set-Cookie
+      stripPrefix: false
+    auth-center_logout:
+      path: /logout/**
+      serviceId: auth-center
+      sensitiveHeaders: Cookie,Set-Cookie
+      stripPrefix: false
+
     catalog:
       path: /catalog/**
       serviceId: catalog-service

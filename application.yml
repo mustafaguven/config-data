@@ -59,7 +59,6 @@ spring:
     username: mg
     password: 123456
 
-
 general:
   eureka:
     server:
@@ -68,3 +67,8 @@ general:
 
 app:
   id: ${random.uuid}
+
+mg:
+  security:
+    jwt:
+      secret: secretkey
