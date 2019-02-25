@@ -20,6 +20,10 @@ zuul:
       path: /payment/**
       serviceId: payment-service
 
+    order:
+      path: /order/**
+      serviceId: order-service
+
     product:
       path: /product/**
       serviceId: product-service
